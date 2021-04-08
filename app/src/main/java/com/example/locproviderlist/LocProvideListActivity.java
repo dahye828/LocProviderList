@@ -31,13 +31,20 @@ public class LocProvideListActivity extends AppCompatActivity {
 
                 locProvList = lm.getAllProviders();
 
-                String s ="";
+                mTextView.setText("");
+
+                for (String str : locProvList){
+                    mTextView.append("Loc. Provider: " + str + "\n");
+                    mTextView.append("Status : " + lm.isProviderEnabled(str) + "\n\n");
+                }
+
+                /*String s ="";
 
                 for (int i = 0; i < locProvList.size(); i++ ) {
                     s += "Loc. Provider: " +locProvList.get(i) + "\n"
                             + "Status : " + lm.isProviderEnabled(locProvList.get(i)) + "\n\n";
                 }
-                mTextView.setText(s);
+                mTextView.setText(s);*/
             }
         });
     }
